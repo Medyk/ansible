@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ansible:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - "medyk/ansible:6"
+        - "medyk/ansible:latest"
+    image: medyk/ansible:latest
+    volumes:
+      - ./inventory:/inventory
+      - ./playbooks:/playbooks
+    network_mode: host
+    command: ["bash"]
