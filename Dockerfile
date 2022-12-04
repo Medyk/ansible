@@ -1,5 +1,7 @@
 FROM debian:bullseye
 
+ARG ANSIBLE_VERSION=6.6.0
+
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
@@ -22,6 +24,6 @@ RUN pip3 install --upgrade pip && \
     pip3 install jmespath && \
     pip3 install requests && \
     pip3 install hvac && \
-    python3 -m pip install ansible && \
+    python3 -m pip install ansible==${ANSIBLE_VERSION} && \
     ansible-galaxy collection install community.general && \
     ansible-galaxy collection install community.hashi_vault
