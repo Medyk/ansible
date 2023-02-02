@@ -14,7 +14,7 @@ RUN apt-get -y update && \
 
 RUN apt-get -y install gcc libkrb5-dev python3 python3-dev && \
     apt-get -y install python3-pip && \
-    apt-get -y install curl wget nano && \
+    apt-get -y install curl wget nano sshpass && \
     apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip && \
