@@ -12,7 +12,7 @@ RUN yum update -y && \
     yum install -y curl wget nano sshpass && \
     yum clean all
 
-RUN pip3 install --upgrade pip && \
+RUN pip3 install --upgrade pip setuptools wheel && \
     pip3 install --upgrade virtualenv && \
     pip3 install pywinrm[kerberos] && \
     pip3 install pywinrm && \

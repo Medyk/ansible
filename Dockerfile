@@ -17,7 +17,7 @@ RUN apt-get -y install gcc libkrb5-dev python3 python3-dev && \
     apt-get -y install curl wget nano sshpass && \
     apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip && \
+RUN pip3 install --upgrade pip setuptools wheel && \
     pip3 install --upgrade virtualenv && \
     pip3 install pywinrm[kerberos] && \
     pip3 install pywinrm && \
